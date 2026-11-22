@@ -595,7 +595,7 @@ int main()
 				else
 				printf("\n\aIncorrect!\n");
 				
-			printf("\nWalking into the room, the lights turned off. \n1. Dangling Modifier \n2. Phrase Modifier \n3.Misplaced Modifier \n4.Complex Modifier\n");
+			printf("\n2, 6, 12, 20, 30, 42, ? \n1.56 \n2.74 \n3.53 \n4.52\n");
 	  	   scanf("%d", &e);
 	  	   if(e == 1){
 	  	      	printf("\nCorrect!\n");
@@ -604,7 +604,7 @@ int main()
 				else
 				printf("\n\aIncorrect!\n");
 				
-			printf("\nWhich kind of Phrase it has? \nShe spoke very softly during the meeting. \n1.Verb phrase. \n2.Noun phrase. \n3.Adverb phrase. \n4.Adjective phrase.\n");
+			printf("\nA father is four times as old as his son. In 20 years, he will be twice as old as his son. How old is the father currently? \nShe spoke very softly during the meeting. \n1.20 \n2.30 \n3.40 \n4.50\n");
 	  	   scanf("%d", &e);
 	  	   if(e == 3){
 	  	      	printf("\nCorrect!\n");
@@ -613,16 +613,16 @@ int main()
 				else
 				printf("\n\aIncorrect!\n");
 				
-			printf("\nChoose the correctly punctuated sentence. \n1.However I disagree with you \n2.However, I disagree with you \n3.However I, disagree with you \n4.However; I, disagree with you\n");
+			printf("\nThree friends pay $30 for a hotel room, receive a $3 refund, and the bellboy keeps $2 from the original $5 refund; where is the missing dollar? \n1.1$ \n2.2$ \n3.3$ \n4.None of the above\n");
 	  	   scanf("%d", &e);
-	  	   if(e == 2){
+	  	   if(e == 4){
 	  	      	printf("\nCorrect!\n");
 				score[1][4] = 1;
 				}
 				else
 				printf("\n\aIncorrect!\n");
 				
-			printf("\nChoose the correct agreement. \n1.Neither the teacher nor the students was ready \n2.Neither teacher or students were ready \n3.Neither the teacher nor the students were ready \n4.Neither the teacher nor students is ready yesterday\n");
+			printf("\nA clock shows 3:15; what is the exact angle between its hour and minute hands? \n1. 4.5 degrees \n2. 9.5 degrees \n3. 7.5 degrees \n4. 5 degrees\n");
 	  	   scanf("%d", &e);
 	  	   if(e == 3){
 	  	      	printf("\nCorrect!\n");
@@ -649,7 +649,7 @@ int main()
 				else
 				printf("\n\aIncorrect!\n");
 				
-			printf("\nWhat does 'loquacious' mean? \n1.Talkative \n2.Silent \n3.Angry \n4.Forgetful\n");
+			printf("\nIf five machines take five minutes to make five products, how long will 100 machines take to make 100 products? \n1.5 minutes \n2.10 minutes \n3.20 minutes \n4.50 minutes\n");
 	  	   scanf("%d", &e);
 	  	   if(e == 1){
 	  	      	printf("\nCorrect!\n");
@@ -658,7 +658,7 @@ int main()
 				else
 				printf("\n\aIncorrect!\n");	
 				
-			printf("\nChoose the correct sentence. \n1.Despite of the rain, we went out \n2.Despite the rain, we went out \n3.Although the rain, we went out \n4.Despite it was raining, we went out\n");
+			printf("\nA man looks at a photograph and says, "Brothers and sisters I have none, but that man's father is my father's son"; who is in the photograph?\n1.The man himself \n2.His son \n3.His brother \n4.His father\n");
 	  	   scanf("%d", &e);
 	  	   if(e == 2){
 	  	      	printf("\nCorrect!\n");
