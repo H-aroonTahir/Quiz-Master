@@ -51,7 +51,7 @@ The program creates or appends to `QuizResults.txt` in the working directory whe
 
 The AI detector screenshot and its assessment are included separately here:
 
-[Open the AI Detector Report (PDF)](docs/AI_Detector_Report.pdf)
+[Open the AI Detector Report (PDF)](https://github.com/H-aroonTahir/Quiz-Master/blob/main/AI_Detector_Report.pdf)
 
 The included detector result is an estimate for the text submitted to the detector. It is not definitive proof of code authorship or a measurement of the percentage of AI-generated code. AI assistance during this project was occasional and focused on debugging, logical review, and understanding specific programming issues, as described by the team.
 
