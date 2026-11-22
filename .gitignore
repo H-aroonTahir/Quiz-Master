@@ -1,0 +1,7 @@
+# Compiled program
+QuizMaster
+QuizMaster.exe
+*.o
+
+# Quiz output generated while running
+QuizResults.txt
