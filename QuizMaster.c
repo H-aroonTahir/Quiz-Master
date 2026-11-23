@@ -7,7 +7,6 @@
 #define reset  "\033[0m"
 
 
-
 int getValidNumber(int min, int max)
 {
     char input[100];
@@ -22,11 +21,12 @@ int getValidNumber(int min, int max)
             return min;
         }
 
+
         if (strchr(input, '\n') == NULL && !feof(stdin))
         {
             while ((ch = getchar()) != '\n' && ch != EOF)
             {
-                // Discard extra characters. 
+                // Discard extra characters That's why i write nothing here..
             }
         }
 
@@ -47,6 +47,7 @@ int getValidNumber(int min, int max)
         printf("Invalid input! Please enter a number between %d and %d: ", min, max);
     }
 }
+
 
 
 char getRetryChoice(void)
@@ -72,34 +73,44 @@ char getRetryChoice(void)
     }
 }
 
-void showResult(int score[2][10], int *totals, float *percentage)
+
+
+typedef struct
 {
-    *totals = 0;
+    int correctAnswers;
+    int wrongAnswers;
+    float percentage;
+} QuizResult;
+
+void showResult(int score[2][10], QuizResult *result)
+{
+    result->correctAnswers = 0;
 
     for(int i = 0; i < 10; i++)
     {
-        *totals = *totals + score[1][i];
+        result->correctAnswers = result->correctAnswers + score[1][i];
     }
 
-    *percentage = ((float)*totals / 10.0f) * 100.0f;
+    result->wrongAnswers = 10 - result->correctAnswers;
+    result->percentage = ((float)result->correctAnswers / 10.0f) * 100.0f;
 
     printf("\n\n========== QUIZ RESULT ==========\n");
 
     printf("Total Questions: 10\n");
-    printf("Correct Answers: %d\n", *totals);
-    printf("Wrong Answers: %d\n", 10 - *totals);
-    printf("Your Score: %d/10\n", *totals);
-    printf("Percentage: %.2f%%\n", *percentage);
+    printf("Correct Answers: %d\n", result->correctAnswers);
+    printf("Wrong Answers: %d\n", result->wrongAnswers);
+    printf("Your Score: %d/10\n", result->correctAnswers);
+    printf("Percentage: %.2f%%\n", result->percentage);
 
-    if(*percentage >= 80)
+    if(result->percentage >= 80)
     {
         printf("Performance: Excellent!\n");
     }
-    else if(*percentage >= 60)
+    else if(result->percentage >= 60)
     {
         printf("Performance: Good!\n");
     }
-    else if(*percentage >= 40)
+    else if(result->percentage >= 40)
     {
         printf("Performance: Average!\n");
     }
@@ -121,8 +132,7 @@ int main()
 	{1,2,3,4,5,6,7,8,9,10},
 	{0,0,0,0,0,0,0,0,0,0}
 	};
-	int totals;
-	float percentage;
+	QuizResult result;
 
 	
 	printf("      ====================="bold "Welcome to Quiz Master" reset"===========================\n");
@@ -159,7 +169,9 @@ int main()
 	   {
 	   	printf("%d. %s: \n", i+1, subjects[i]);
 	} 
-	totals = 0;
+	result.correctAnswers = 0;
+	result.wrongAnswers = 0;
+	result.percentage = 0.0f;
 	for(int i = 0; i < 10; i++)
 	{
 	    score[1][i] = 0;
@@ -1094,8 +1106,7 @@ int main()
 			e = getValidNumber(1, 4);
 			if(e == 3){
 				printf("\nCorrect!\n");
-				score[1][6] = 1;
-			}
+				score[1][6] = 1;}
 			else
 				{printf("\n\aIncorrect!\n");
 				}
@@ -1440,11 +1451,9 @@ int main()
 			if(e == 2)
 			{
 				printf("\nCorrect!\n");
-				score[1][0] = 1;
-			}
+				score[1][0] = 1;}
 			else
-			{
-				printf("\nIncorrect!\n");
+			{printf("\nIncorrect!\n");
 			}
 			printf("\nQ2. Which of these is a volatile memory?\n1. ROM\n2. Hard Disk\n3. RAM\n4. SSD\n");
 			e = getValidNumber(1, 4);
@@ -1667,7 +1676,7 @@ else if(b == 3)
 
 	if(a >= 1 && a <= 5 && b >= 1 && b <= 3)
 	{
-	showResult(score, &totals, &percentage);
+	showResult(score, &result);
 	}
 	printf("=================================\n");
 
@@ -1701,11 +1710,11 @@ else if(b == 3)
 
     fprintf(fp, "Total Questions: 10\n");
 
-    fprintf(fp, "Correct Answers: %d\n", totals);
+    fprintf(fp, "Correct Answers: %d\n", result.correctAnswers);
 
-    fprintf(fp, "Wrong Answers: %d\n", 10 - totals);
+    fprintf(fp, "Wrong Answers: %d\n", result.wrongAnswers);
 
-    fprintf(fp, "Percentage: %.2f%%\n", percentage);
+    fprintf(fp, "Percentage: %.2f%%\n", result.percentage);
 
     fprintf(fp, "=================================\n\n");
 
