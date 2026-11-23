@@ -19,7 +19,7 @@ Quiz Master lets a user choose a subject and difficulty level, answer ten multip
 
 **Hamza Tahir**
 - Developed the Mathematics, General Knowledge, and Computer sections.
-- Developed the result function.
+- Developed the result and getValidNumber functions.
 - Helped with logical proofreading and reviewing question-answer consistency.
 
 **Shaheer Sarwar**
